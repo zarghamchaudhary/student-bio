@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Bio</title>
+</head>
+<body>
+
+    <h2>Student Bio</h2>
+
+    <div id="table-container"></div>
+
+    <script>
+        // Function to create a table dynamically
+        function createTable() {
+            const table = document.createElement('table');
+            table.style.width = '100%';
+            table.setAttribute('border', '1');
+
+            // Create table rows
+            for (let i = 0; i < 3; i++) {
+                const row = table.insertRow();
+
+                // Create table cells for each row
+                for (let j = 0; j < 3; j++) {
+                    const cell = row.insertCell();
+                    cell.textContent = `Row ${i+1}, Cell ${j+1}`;
+                    cell.style.padding = '8px';
+                    cell.style.textAlign = 'center';
+                }
+            }
+
+            
+            document.getElementById('table-container').appendChild(table);
+        }
+
+        
+        createTable();
+    </script>
+
+</body>
+</html>
